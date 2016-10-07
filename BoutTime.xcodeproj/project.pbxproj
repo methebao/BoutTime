@@ -13,6 +13,7 @@
 		7FF83CC01DA7401F008A2A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF83CBF1DA7401F008A2A63 /* Assets.xcassets */; };
 		7FF83CC31DA7401F008A2A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF83CC11DA7401F008A2A63 /* LaunchScreen.storyboard */; };
 		7FF83CCB1DA745B3008A2A63 /* historicalEvents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FF83CCA1DA745B3008A2A63 /* historicalEvents.plist */; };
+		7FF83CED1DA78500008A2A63 /* HistoricalEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF83CEC1DA78500008A2A63 /* HistoricalEvents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7FF83CC21DA7401F008A2A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FF83CC41DA7401F008A2A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FF83CCA1DA745B3008A2A63 /* historicalEvents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historicalEvents.plist; sourceTree = "<group>"; };
+		7FF83CEC1DA78500008A2A63 /* HistoricalEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalEvents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7FF83CB81DA7401F008A2A63 /* AppDelegate.swift */,
 				7FF83CBA1DA7401F008A2A63 /* ViewController.swift */,
 				7FF83CBC1DA7401F008A2A63 /* Main.storyboard */,
+				7FF83CEC1DA78500008A2A63 /* HistoricalEvents.swift */,
 				7FF83CBF1DA7401F008A2A63 /* Assets.xcassets */,
 				7FF83CC11DA7401F008A2A63 /* LaunchScreen.storyboard */,
 				7FF83CCA1DA745B3008A2A63 /* historicalEvents.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF83CED1DA78500008A2A63 /* HistoricalEvents.swift in Sources */,
 				7FF83CBB1DA7401F008A2A63 /* ViewController.swift in Sources */,
 				7FF83CB91DA7401F008A2A63 /* AppDelegate.swift in Sources */,
 			);
@@ -304,6 +308,7 @@
 				7FF83CC91DA7401F008A2A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

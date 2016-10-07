@@ -2,10 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Diego Costa
-Diego Costa
-Diego Costa
-DiegoCosta</key>
+	<key>Costa</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -15,8 +12,7 @@ DiegoCosta</key>
 			<string>joined Chelsea for £32 million</string>
 		</array>
 	</dict>
-	<key>Michy Batshuayi
-Michy Batshuayi</key>
+	<key>Batshuayi</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -30,7 +26,7 @@ was signed by Chelsea for €33 million.
 was signed by Chelsea for €33 million</string>
 		</array>
 	</dict>
-	<key>Cesc Fabregas</key>
+	<key>Fabregas</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -40,7 +36,7 @@ was signed by Chelsea for €33 million</string>
 			<string>returned to London in June 2014 to Chelsea for a fee of £30 million</string>
 		</array>
 	</dict>
-	<key>N&apos;Golo Kanté</key>
+	<key>Kante</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -60,7 +56,7 @@ was signed by Chelsea for €33 million</string>
 			<string>scored a first-half hat-trick in a 5–1 win at Milton Keynes Dons in the fourth round of the FA Cup</string>
 		</array>
 	</dict>
-	<key>Eden Hazzard</key>
+	<key>Hazzard</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -80,7 +76,7 @@ was signed by Chelsea for €33 million</string>
 			<string>joined Premier League champions Chelsea on a four-year contract for £19 million </string>
 		</array>
 	</dict>
-	<key>John Obi Mikel</key>
+	<key>Mikel</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -90,10 +86,7 @@ was signed by Chelsea for €33 million</string>
 			<string>scored his first-ever Premier League goal in a 2–0 win against Fulham.</string>
 		</array>
 	</dict>
-	<key>Victor Moses
-Victor Moses
-Victor Moses
-</key>
+	<key>Moses</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -103,7 +96,7 @@ Victor Moses
 			<string> played his first league game for Chelsea in three years</string>
 		</array>
 	</dict>
-	<key>Nemanja Matić</key>
+	<key>Matic</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -123,8 +116,7 @@ Victor Moses
 			<string>winning the Premier League and League Cup in his second season in England</string>
 		</array>
 	</dict>
-	<key>Ola Aina
-</key>
+	<key>Aina</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -134,8 +126,7 @@ Victor Moses
 			<string>continued his role in the Under-21s and Under-19s sides.</string>
 		</array>
 	</dict>
-	<key>Ruben Loftus-Cheek
-</key>
+	<key>Cheek</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -145,8 +136,7 @@ Victor Moses
 			<string>made his first appearance coming off the bench against Crystal Palace as Chelsea suffered their first home defeat of the season.</string>
 		</array>
 	</dict>
-	<key>Nathaniel Chalobah
-</key>
+	<key>Chalobah</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -156,8 +146,7 @@ Victor Moses
 			<string>Chelsea rejected loan offers from teams including Leicester City, Sevilla and Napoli for Chalobah </string>
 		</array>
 	</dict>
-	<key>Dominic Solanke
-</key>
+	<key>Solanke</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -169,8 +158,7 @@ Victor Moses
 </string>
 		</array>
 	</dict>
-	<key>David Luiz
-</key>
+	<key>Luiz</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -180,8 +168,7 @@ Victor Moses
 			<string>returned to Chelsea from PSG, for a reported fee of £34M</string>
 		</array>
 	</dict>
-	<key>César Azpilicueta
-</key>
+	<key>Azpilicueta</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -191,7 +178,7 @@ Victor Moses
 			<string>selected for the 2014 World Cup and Euro 2016</string>
 		</array>
 	</dict>
-	<key>John Terry</key>
+	<key>Terry</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -201,8 +188,7 @@ Victor Moses
 			<string>received his first league red card for over five years, being dismissed for a foul on Salomón Rondón</string>
 		</array>
 	</dict>
-	<key>Gary Cahill
-</key>
+	<key>Cahill</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -212,7 +198,7 @@ Victor Moses
 			<string>signed for Chelsea for approximately £7 million</string>
 		</array>
 	</dict>
-	<key>Kurt Zouma</key>
+	<key>Zouma</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -222,7 +208,7 @@ Victor Moses
 			<string>represented France at youth levels, up to under-21</string>
 		</array>
 	</dict>
-	<key>Marcos Alonso</key>
+	<key>Alonso</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -232,8 +218,7 @@ Victor Moses
 			<string>Chelsea to sign Alonso for an estimated £23 million</string>
 		</array>
 	</dict>
-	<key>Branislav Ivanović
-</key>
+	<key>Ivanovic</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -243,8 +228,7 @@ Victor Moses
 			<string>made captain of the national team</string>
 		</array>
 	</dict>
-	<key>Asmir Begović
-</key>
+	<key>Begovic</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -254,7 +238,7 @@ Victor Moses
 			<string> joined Premier League champions Chelsea for a fee of £8 million</string>
 		</array>
 	</dict>
-	<key>Thibaut Courtois</key>
+	<key>Courtois</key>
 	<dict>
 		<key>Answer</key>
 		<array>
@@ -264,7 +248,7 @@ Victor Moses
 			<string>was recalled to Chelsea</string>
 		</array>
 	</dict>
-	<key>Antonio Conte</key>
+	<key>Conte</key>
 	<dict>
 		<key>Answer</key>
 		<array>
