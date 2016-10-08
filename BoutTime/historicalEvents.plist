@@ -4,7 +4,7 @@
 <dict>
 	<key>Costa</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>play for Braga and Penafiel in Portugal</string>
 			<string>was signed by Atlético Madrid </string>
@@ -14,21 +14,18 @@
 	</dict>
 	<key>Batshuayi</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>scoring 44 goals in 120 games at Standard Liège</string>
 			<string>the second-highest scorer in the 2013–14 Belgian Pro League </string>
 			<string>transferred to Marseille for £4.5 million</string>
 			<string>was signed by Chelsea for €33 million.
-
-was signed by Chelsea for €33 million.
-
 was signed by Chelsea for €33 million</string>
 		</array>
 	</dict>
 	<key>Fabregas</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>was signed by English Premier League side Arsenal</string>
 			<string>return to Barcelona in a deal worth up to £35 million</string>
@@ -38,7 +35,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Kante</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>play at Boulogne and then spent two seasons at Caen</string>
 			<string>signed for Leicester City for a fee of €8 million</string>
@@ -48,7 +45,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Oscar</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>play at São Paulo</string>
 			<string>left for Internacional</string>
@@ -58,7 +55,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Hazzard</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>moved to France joining club Lille</string>
 			<string>was signed by Atlético Madrid </string>
@@ -68,7 +65,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Pedro</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>scored 99 goals in 321 appearances for Barcelona </string>
 			<string>first player to score in six different club in one season</string>
@@ -78,7 +75,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Mikel</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>played for Nigeria at the FIFA World Youth Championships</string>
 			<string>first start for Chelsea in the UEFA Champions League </string>
@@ -88,7 +85,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Moses</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>began his career in the Championship with Crystal Palace</string>
 			<string>loan to Liverpool</string>
@@ -98,7 +95,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Matic</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>play for edinstvo Ub and Slovak side MFK Košice </string>
 			<string> joining Chelsea for £1.5 million</string>
@@ -108,7 +105,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Willian</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>joining Shakhtar for a fee of €14 million</string>
 			<string>won honours four Ukrainian Premier League titles </string>
@@ -118,7 +115,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Aina</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>signed for Chelsea as an under-11</string>
 			<string>made his first-team debut in a pre-season friendly </string>
@@ -128,7 +125,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Cheek</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>joined Chelsea at the age of eight</string>
 			<string>made  9 appearances for the U-21 squad</string>
@@ -138,7 +135,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Chalobah</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>joining the academy system at Fulham</string>
 			<string>signed a professional contract with Chelsea</string>
@@ -148,7 +145,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Solanke</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>scored 20 goals in 25 games for Chelsea under-18s</string>
 			<string>the youngest player to debut in the Champions League for Chelsea</string>
@@ -160,7 +157,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Luiz</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>starting out at Vitória, he moved to Benfica</string>
 			<string>joined Chelsea, winning the Champions League</string>
@@ -170,7 +167,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Azpilicueta</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>spent three seasons in La Liga before switching to Marseille</string>
 			<string>moved to Chelsea, winning the Europa League</string>
@@ -180,7 +177,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Terry</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>named in the all-star squad for the 2006 FIFA World Cup</string>
 			<string>became the first captain of Chelsea to lift the FA Cup</string>
@@ -190,7 +187,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Cahill</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>playing for the AFC Dronfield youth set-system in Derbyshire</string>
 			<string>joined Burnley on a season-long loan</string>
@@ -210,7 +207,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Alonso</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>started his career with Real Madrid</string>
 			<string>make his name with Bolton Wanderers in England </string>
@@ -220,7 +217,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Ivanovic</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>first capped for Serbia</string>
 			<string> play for Lokomotiv Moscow in the Russian Premier League</string>
@@ -230,7 +227,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Begovic</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>made his Premier League debut</string>
 			<string>being sold to Stoke City for £3.25 million</string>
@@ -240,7 +237,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Courtois</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string> came up through the Genk youth system</string>
 			<string> joined Chelsea for a reported €9 million</string>
@@ -250,7 +247,7 @@ was signed by Chelsea for €33 million</string>
 	</dict>
 	<key>Conte</key>
 	<dict>
-		<key>Answer</key>
+		<key>Periods</key>
 		<array>
 			<string>took over at Juventus</string>
 			<string>won three consecutive Serie A titles</string>

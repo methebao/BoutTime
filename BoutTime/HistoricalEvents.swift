@@ -7,62 +7,66 @@
 //
 
 import Foundation
-
+import UIKit
 
 // Protocol
 
 protocol HistoricalEventType {
 
-    var selection: [PlayerList] { get }
-    var question : [PlayerList : AnswersListType] { get set }
-
-    init(question: [PlayerList: AnswersListType])
-    func randomQuestion(previousNumber: Int?) -> (previousNumber: Int, event: AnswersListType)
+    var eventList: [EventsList] { get }
+    var event : [EventsList : PeriodsListType] { get set }
+    var randomEventNumber: Int { get set }
+    init(event: [EventsList: PeriodsListType])
+    func randomEvent()  -> PeriodsListType
+    func randomIndexPeriod (period: PeriodsListType) -> String
+    func checkCorrectOrder(first: UILabel,second: UILabel,third: UILabel,four: UILabel) -> Bool
 
 }
-protocol AnswersListType {
-    var answerList : [String] {get set}
+protocol PeriodsListType {
+    var periodsList : [String] { get set }
 }
-enum QuestionError: Error {
+enum EventError: Error {
     case InvalidResource
     case ConversionError
     case InvalidKey
 }
-
+enum RandomError: Error {
+    case RandomError
+}
 class plistConveter {
 
     class func dictionaryFromFile(resource: String, ofType type: String ) throws -> [String : AnyObject]{
         guard let path = Bundle.main.path(forResource: resource, ofType: type) else {
-            throw QuestionError.InvalidResource
+            throw EventError.InvalidResource
         }
         guard let dictionary = NSDictionary.init(contentsOfFile: path), let castDictionary = dictionary as? [String:AnyObject] else {
-            throw QuestionError.ConversionError
+            throw EventError.ConversionError
         }
         return castDictionary
     }
 }
-class QuestionUnarchiver {
+class EventUnarchiver {
 
-    class func gettingQuestionFromDictionary(dictionary: [String:AnyObject] ) throws -> [PlayerList : AnswersListType] {
+    class func gettingEventFromDictionary(dictionary: [String:AnyObject] ) throws -> [EventsList : PeriodsListType] {
 
-        var question: [PlayerList: AnswersListType ] = [:]
+        var event: [EventsList: PeriodsListType ] = [:]
 
         for (key,value) in dictionary {
 
             if let itemDict = value as? [String :[String]],
-                let answer = itemDict["Answer"]
+                let answer = itemDict["Periods"]
             {
-                let item = Answer(answerList: answer)
+                let item = Answer(periodsList: answer)
 
-                guard let key = PlayerList(rawValue: key) else {
-                    throw QuestionError.InvalidKey
+                guard let key = EventsList(rawValue: key) else {
+                    throw EventError.InvalidKey
                 }
-                question.updateValue(item, forKey: key)
+                event.updateValue(item, forKey: key)
             }
 
         }
-        //print(question)
-        return question
+        //print(event)
+        return event
     }
     
 }
@@ -70,7 +74,7 @@ class QuestionUnarchiver {
 
 // Concrete Types
 
-enum PlayerList: String {
+enum EventsList: String {
     case Costa
     case Batshuayi
     case Fabregas
@@ -97,30 +101,83 @@ enum PlayerList: String {
     case Courtois
     case Conte
 }
-struct Answer: AnswersListType {
-     var answerList: [String]
+struct Answer: PeriodsListType {
+     var periodsList: [String]
 }
 
 class HistoricalEvent: HistoricalEventType {
 
-    var selection: [PlayerList] = [.Costa,.Batshuayi,.Fabregas,.Kante,.Oscar,.Hazzard,.Pedro,.Mikel,.Moses,.Matic,.Willian,.Aina,.Cheek,.Chalobah,.Solanke,.Luiz,.Azpilicueta,.Terry,.Cahill,.Zouma,.Alonso,.Ivanovic,.Begovic,.Courtois,.Conte]
+    var eventList: [EventsList] = [.Costa,.Batshuayi,.Fabregas,.Kante,.Oscar,.Hazzard,.Pedro,.Mikel,.Moses,.Matic,.Willian,.Aina,.Cheek,.Chalobah,.Solanke,.Luiz,.Azpilicueta,.Terry,.Cahill,.Zouma,.Alonso,.Ivanovic,.Begovic,.Courtois,.Conte]
 
-    var question: [PlayerList : AnswersListType]
-
-    required init(question: [PlayerList : AnswersListType]) {
-        self.question = question
+    var event: [EventsList : PeriodsListType]
+    var randomEventNumber: Int
+    var previousPeriodNumber: [Int] = []
+    var previousEventNumber: [Int] = []
+    required init(event: [EventsList : PeriodsListType]) {
+        self.event = event
+        self.randomEventNumber = 0
     }
 
-    func randomQuestion(previousNumber: Int?) -> (previousNumber: Int, event: AnswersListType) {
-        var randomNumber = Int(arc4random_uniform(UInt32(selection.count)))
-        while previousNumber == randomNumber {
-            randomNumber = Int(arc4random_uniform(UInt32(selection.count)))
+    func randomEvent()  -> PeriodsListType  {
+        var check = true
+
+        while check {
+            self.randomEventNumber = Int(arc4random_uniform(UInt32(eventList.count)))
+            check = false
+            for i in previousEventNumber {
+                if randomEventNumber == i {
+                    check =  true
+                }
+            }
+            if check == false {
+                check = false
+            }
+
+            if check == false {
+                break
+            }
         }
+        // Optimize
+        previousPeriodNumber.append(randomEventNumber)
 
-        let answerList = question[selection[randomNumber]]
 
-        return (randomNumber,answerList!)
+        return event[eventList[randomEventNumber]]!
 
+    }
+
+    func randomIndexPeriod (period: PeriodsListType) -> String {
+        var check = true
+        var randomPeriodNumber = 0
+        while check {
+            randomPeriodNumber = Int(arc4random_uniform(UInt32(period.periodsList.count)))
+            //check = checkAnswerDuplication(number: randomQuestionNumber,type: "Answer")
+            check = false
+            for i in previousPeriodNumber {
+                if randomPeriodNumber == i {
+                    check =  true
+                }
+            }
+            if check == false {
+                check = false
+            }
+
+            if check == false {
+                break
+            }
+         }
+        // Optimize
+        previousPeriodNumber.append(randomPeriodNumber)
+        return period.periodsList[randomPeriodNumber]
+    }
+
+    func checkCorrectOrder(first: UILabel,second: UILabel,third: UILabel,four: UILabel) -> Bool {
+        guard let period = event[eventList[randomEventNumber]] else {
+            return false
+        }
+        guard period.periodsList[0] == first.text, period.periodsList[1] == second.text, period.periodsList[2] == third.text, period.periodsList[3] == four.text else {
+            return false
+        }
+        return true
     }
 
 }

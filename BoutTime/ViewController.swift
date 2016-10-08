@@ -14,72 +14,53 @@ class ViewController: UIViewController {
     @IBOutlet var secondAnswer: UILabel!
     @IBOutlet var thirdAnswer: UILabel!
     @IBOutlet var fourAnswer: UILabel!
+    @IBOutlet var nextRoundSuccess: UIButton!
 
     let historicalEvents: HistoricalEventType
-    var previousEventNumber:Int?
-    var previousAnswerNumber:Int?
+    var previousEventNumber:[Int] = []
+    var previousAnswerNumber:[Int] = []
+
+    
     required init?(coder aDecoder: NSCoder) {
 
         do{
             let dictionary = try plistConveter.dictionaryFromFile(resource: "historicalEvents", ofType: "plist")
-            let question = try QuestionUnarchiver.gettingQuestionFromDictionary(dictionary: dictionary)
-            self.historicalEvents = HistoricalEvent(question: question)
+            let event = try EventUnarchiver.gettingEventFromDictionary(dictionary: dictionary)
+
+          self.historicalEvents = HistoricalEvent(event: event)
         } catch let error {
             fatalError("\(error)")
         }
         super.init(coder: aDecoder)
     }
-    func randomQuestion() -> [String] {
 
-        let answers = historicalEvents.randomQuestion(previousNumber: previousEventNumber)
-        previousEventNumber = answers.previousNumber
-        print(answers)
-        let answersTemp = answers.event
-        let events = answersTemp.answerList
 
-        return events
-    }
-    func displayEvents() {
 
-        firstAnswer.text = randomIndexAnswer()
-        print(firstAnswer.text)
-        secondAnswer.text = randomIndexAnswer()
-        thirdAnswer.text = randomIndexAnswer()
-        fourAnswer.text = randomIndexAnswer()
-    }
-
-    func randomIndexAnswer () -> String {
-
-        let events = randomQuestion()
-        print(events)
-
-        var randomNumber = Int(arc4random_uniform(UInt32(events.count)))
-        while previousAnswerNumber == randomNumber {
-            randomNumber = Int(arc4random_uniform(UInt32(events.count)))
-        }
-        previousAnswerNumber = randomNumber
-        print(events[randomNumber])
-        return events[randomNumber]
-    }
-    func setupView() {
-        randomQuestion()
-        randomIndexAnswer()
-        displayEvents()
+    func setupRound() {
+        nextRoundSuccess.isHidden = true
+        let period =  historicalEvents.randomEvent()
+        displayEvents(period: period)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        setupView()
+        setupRound()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func displayEvents(period: PeriodsListType) {
+      firstAnswer.text =  historicalEvents.randomIndexPeriod(period: period)
+      secondAnswer.text = historicalEvents.randomIndexPeriod(period: period)
+      thirdAnswer.text = historicalEvents.randomIndexPeriod(period: period)
+      fourAnswer.text = historicalEvents.randomIndexPeriod(period: period)
+    }
 
     enum ButtonType: Int {
-    case FirstDown
+    case FirstDown = 0
     case FirstUp
     case SecondDown
     case SecondUp
@@ -87,13 +68,32 @@ class ViewController: UIViewController {
     case ThirdUp
     }
 
-//    @IBAction func moveEvents(_ sender: UIButton) {
-//
-//        switch (ButtonType(rawValue: sender.tag)){
-//
-//        }
-//
-//    }
+   @IBAction func moveEvents(_ sender: UIButton) {
+
+        switch(ButtonType(rawValue: sender.tag)!){
+            case .FirstDown,.FirstUp: swapEvents(first: firstAnswer, second: secondAnswer)
+            case .SecondDown,.SecondUp: swapEvents(first: secondAnswer, second: thirdAnswer)
+            case .ThirdDown,.ThirdUp: swapEvents(first: thirdAnswer, second: fourAnswer)
+        }
+      let a = historicalEvents.checkCorrectOrder(first: firstAnswer, second: secondAnswer, third: thirdAnswer, four: fourAnswer)
+    if a {
+      nextRoundSuccess.isHidden = false
+    }
+    }
+
+    func swapEvents(first: UILabel, second: UILabel) {
+        let temp = first.text
+        first.text = second.text
+        second.text = temp
+    }
+  
+    @IBAction func nextRound() {
+
+      setupRound()
+      
+    }
+
+   
 
     
 }
