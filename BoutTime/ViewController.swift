@@ -60,14 +60,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func displayEvents(period: PeriodsListType) {
-        do {
-      firstAnswer.text =  try historicalEvents.randomIndexPeriod(period: period)
-      secondAnswer.text = try historicalEvents.randomIndexPeriod(period: period)
-      thirdAnswer.text = try historicalEvents.randomIndexPeriod(period: period)
-      fourAnswer.text = try historicalEvents.randomIndexPeriod(period: period)
-        } catch let error {
-            fatalError("\(error)")
-        }
+
+      firstAnswer.text =   historicalEvents.randomIndexPeriod(period: period)
+      secondAnswer.text = historicalEvents.randomIndexPeriod(period: period)
+      thirdAnswer.text = historicalEvents.randomIndexPeriod(period: period)
+      fourAnswer.text = historicalEvents.randomIndexPeriod(period: period)
+        
     }
 
     enum ButtonType: Int {case FirstDown = 0, FirstUp, SecondDown, SecondUp, ThirdDown, ThirdUp

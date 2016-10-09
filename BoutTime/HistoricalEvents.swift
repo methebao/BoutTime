@@ -17,7 +17,7 @@ protocol HistoricalEventType {
     var event : [EventsList : PeriodsListType] { get set }
     init(event: [EventsList: PeriodsListType])
     func randomEvent() throws -> PeriodsListType
-    func randomIndexPeriod (period: PeriodsListType)  -> String
+    func randomIndexPeriod (period: PeriodsListType) -> String
     func checkCorrectOrder(first: UILabel,second: UILabel,third: UILabel,four: UILabel) -> Bool
 
 }
