@@ -15,10 +15,9 @@ protocol HistoricalEventType {
 
     var eventList: [EventsList] { get }
     var event : [EventsList : PeriodsListType] { get set }
-    var randomEventNumber: Int { get set }
     init(event: [EventsList: PeriodsListType])
-    func randomEvent()  -> PeriodsListType
-    func randomIndexPeriod (period: PeriodsListType) -> String
+    func randomEvent() throws -> PeriodsListType
+    func randomIndexPeriod (period: PeriodsListType)  -> String
     func checkCorrectOrder(first: UILabel,second: UILabel,third: UILabel,four: UILabel) -> Bool
 
 }
@@ -31,7 +30,8 @@ enum EventError: Error {
     case InvalidKey
 }
 enum RandomError: Error {
-    case RandomError
+    case RandomEventError
+    case RandomPeriodError
 }
 class plistConveter {
 
@@ -110,19 +110,22 @@ class HistoricalEvent: HistoricalEventType {
     var eventList: [EventsList] = [.Costa,.Batshuayi,.Fabregas,.Kante,.Oscar,.Hazzard,.Pedro,.Mikel,.Moses,.Matic,.Willian,.Aina,.Cheek,.Chalobah,.Solanke,.Luiz,.Azpilicueta,.Terry,.Cahill,.Zouma,.Alonso,.Ivanovic,.Begovic,.Courtois,.Conte]
 
     var event: [EventsList : PeriodsListType]
-    var randomEventNumber: Int
+
     var previousPeriodNumber: [Int] = []
     var previousEventNumber: [Int] = []
+    var currentPeriod: PeriodsListType?
     required init(event: [EventsList : PeriodsListType]) {
         self.event = event
-        self.randomEventNumber = 0
     }
-
-    func randomEvent()  -> PeriodsListType  {
+    func randomEvent() throws -> PeriodsListType  {
         var check = true
-
+        // Reset previous game event number
+        if previousEventNumber.count > 6 {
+            previousEventNumber = []
+        }
+        var randomEventNumber = 0
         while check {
-            self.randomEventNumber = Int(arc4random_uniform(UInt32(eventList.count)))
+            randomEventNumber = Int(arc4random_uniform(UInt32(eventList.count)))
             check = false
             for i in previousEventNumber {
                 if randomEventNumber == i {
@@ -138,18 +141,29 @@ class HistoricalEvent: HistoricalEventType {
             }
         }
         // Optimize
+
+
         previousPeriodNumber.append(randomEventNumber)
-
-
-        return event[eventList[randomEventNumber]]!
+        print(randomEventNumber)
+        currentPeriod = event[eventList[randomEventNumber]]
+        guard let periods = event[eventList[randomEventNumber]] else {
+            throw RandomError.RandomEventError
+        }
+        return periods
 
     }
 
-    func randomIndexPeriod (period: PeriodsListType) -> String {
+    func randomIndexPeriod (period: PeriodsListType)  -> String {
         var check = true
+
+        // Reset previous round number
+        if previousPeriodNumber.count > 4 {
+            previousPeriodNumber = []
+        }
+
         var randomPeriodNumber = 0
         while check {
-            randomPeriodNumber = Int(arc4random_uniform(UInt32(period.periodsList.count)))
+             randomPeriodNumber = Int(arc4random_uniform(UInt32(period.periodsList.count)))
             //check = checkAnswerDuplication(number: randomQuestionNumber,type: "Answer")
             check = false
             for i in previousPeriodNumber {
@@ -171,14 +185,13 @@ class HistoricalEvent: HistoricalEventType {
     }
 
     func checkCorrectOrder(first: UILabel,second: UILabel,third: UILabel,four: UILabel) -> Bool {
-        guard let period = event[eventList[randomEventNumber]] else {
-            return false
-        }
-        guard period.periodsList[0] == first.text, period.periodsList[1] == second.text, period.periodsList[2] == third.text, period.periodsList[3] == four.text else {
+
+        guard currentPeriod?.periodsList[0] == first.text, currentPeriod?.periodsList[1] == second.text, currentPeriod?.periodsList[2] == third.text, currentPeriod?.periodsList[3] == four.text else  {
             return false
         }
         return true
     }
+    
 
 }
 

@@ -127,12 +127,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIp-z6-96z">
-                                <frame key="frameInset" minX="81" minY="569" width="213" height="53"/>
+                                <frame key="frameInset" minX="81" minY="563" width="213" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" image="next_round_success"/>
                                 <connections>
-                                    <action selector="nextRound" destination="0ha-An-9x2" eventType="touchUpInside" id="KJg-MX-Bu9"/>
+                                    <action selector="nextRound" destination="0ha-An-9x2" eventType="touchUpInside" id="3Ex-7x-wyU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,9 +142,10 @@
                     <connections>
                         <outlet property="firstAnswer" destination="TsR-xY-R8M" id="ZTi-cT-TIq"/>
                         <outlet property="fourAnswer" destination="35q-ol-szU" id="gOI-Kl-nXb"/>
-                        <outlet property="nextRoundSuccess" destination="wIp-z6-96z" id="Rht-RL-W1N"/>
+                        <outlet property="nextRoundButton" destination="wIp-z6-96z" id="pxM-6L-Jbb"/>
                         <outlet property="secondAnswer" destination="Pwp-ZY-YfM" id="ZpY-97-kso"/>
                         <outlet property="thirdAnswer" destination="GEu-tM-iTJ" id="jB3-Vy-QwO"/>
+                        <outlet property="timeLabel" destination="ldM-4o-lV3" id="E5m-2C-GhU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pA-6L-kK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
